@@ -1,0 +1,122 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Hospital Patient System",
+    "type": "object",
+    "properties": {
+        "patientId": {
+            "type": "string",
+            "description": "Unique identifier for the patient."
+        },
+        "firstName": {
+            "type": "string",
+            "minLength": 1,
+            "description": "First name of the patient."
+        },
+        "lastName": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Last name of the patient."
+        },
+        "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "description": "Date of birth of the patient (YYYY-MM-DD)."
+        },
+        "gender": {
+            "type": "string",
+            "enum": [
+                "Male",
+                "Female",
+                "Other"
+            ],
+            "description": "Gender of the patient."
+        },
+        "contactInfo": {
+            "type": "object",
+            "properties": {
+                "phone": {
+                    "type": "string",
+                    "pattern": "^\\+?[1-9]\\d{1,14}$",
+                    "description": "Phone number of the patient."
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email",
+                    "description": "Email address of the patient."
+                }
+            },
+            "required": [
+                "phone"
+            ],
+            "additionalProperties": false
+        },
+        "medicalHistory": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "condition": {
+                        "type": "string",
+                        "description": "Medical condition."
+                    },
+                    "diagnosisDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "Date of diagnosis."
+                    },
+                    "treatment": {
+                        "type": "string",
+                        "description": "Treatment given."
+                    }
+                },
+                "required": [
+                    "condition",
+                    "diagnosisDate"
+                ]
+            },
+            "description": "List of medical conditions the patient has."
+        },
+        "appointments": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "appointmentId": {
+                        "type": "string",
+                        "description": "Unique identifier for the appointment."
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Date and time of the appointment."
+                    },
+                    "doctor": {
+                        "type": "string",
+                        "description": "Name of the doctor."
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Notes for the appointment."
+                    }
+                },
+                "required": [
+                    "appointmentId",
+                    "date",
+                    "doctor"
+                ],
+                "additionalProperties": false
+            },
+            "description": "List of appointments for the patient."
+        }
+    },
+    "required": [
+        "patientId",
+        "firstName",
+        "lastName",
+        "dateOfBirth",
+        "gender",
+        "contactInfo",
+        "medicalHistory"
+    ],
+    "additionalProperties": false
+}
