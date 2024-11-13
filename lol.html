@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table for ym</title>
+    <style>
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <table border = '3' style = ' width: 80%;margin: 20px auto;margin-bottom: 0;'>
+        <caption style = ' margin-top: 10px;font-weight: bold;'>Table 1</caption>
+        <tr>
+            <th rowspan="2">Age Group</th>
+            <th colspan="4">Recommended Sleep Range</th>
+        </tr>
+        <tr>
+            <th colspan = '2'>Teenage (13-17)</th>
+            <th colspan = '2'>Young Adults (18-25)</th>
+        </tr>
+        <tr>
+            <th rowspan="2">Hours</th>
+            <td>Max</td>
+            <td>Min</td>
+            <td>Max</td>
+            <td>Min</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>10</td>
+            <td>7</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <p style = 'text-align:center;margin-top:0;font-weight:bold;font-size:1.2rem;'>Table 1</p>
+
+    <input 
+        type="text" 
+        maxlength="25" 
+        placeholder="Enter text" 
+        style="margin: 20px auto;display: block;padding:8px 12px;border: 1px solid #ccc;border-radius: 5px;width:80%;max-width:400px;box-shadow: 2px 4px 4px rgba(4, 4, 4, 0.1); font-size: 1.2rem;" 
+    />
+
+    <!--i. to display the content of hyperlinks with yellow background color and in italics-->
+    <a href = '#' onclick = 'alert("Dum")' style = 'margin: 30px;background-color: yellow;text-decoration: none;color: black;font-style: italic;border-radius: 15px;padding: 10px;'>Click me</a>
+    <!--ii. to display the contents of unordered lists in bold and in Arial font-->
+    <ul style = 'width:fit-content;background:orange;padding: 10px;font-family:Arial;font-weight:bold;margin: 10px;gap: 2;list-style-type: circle;'>
+        <li>Monday</li>
+        <li>Trued</li>
+        <li>wedfvdfb</li>
+        <li>thrues</li>
+        <li>frial</li>
+    </ul>
+    <!--iii. to display a background image titled “background.jpg” with no tiling.-->
+    <figure style="border: 2px solid #ccc; border-radius: 15px; padding: 15px; margin: 20px auto; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); width: max-content; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <img 
+            src="https://preview.redd.it/ap3g909bmuf51.jpg?width=640&crop=smart&auto=webp&s=25577248c4eaf8575f447704861478bf7d3532b7"
+            alt= "monke image"
+            width= "300px"
+            height= "300px"
+            style= "border-radius: 15px;background-repeat: no-repeat;"
+        >
+        <figcaption 
+            style="margin-top: 10px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: black;"
+        >Monke
+        </figcaption>
+    </figure>
+    <!--Use a promotional video of the flagship event of your college ‘promo.mp4’ in a web
+        page with suitable HTML code with ‘autoplay’ option enabled and displayed in
+        a standard dimension 750X500.-->
+    
+    <video 
+        controls 
+        src="https://youtu.be/qbcmsEIHWeE?si=t5pXBzkn5RLt_WS7" 
+        width="750px" 
+        height="500px" 
+        autoplay 
+    ></video>
+    
+    <button 
+    id='date-btn'
+    style="background-color: #2c3e50;color: white;border: 2px solid #34495e;border-radius: 25px;padding: 10px 20px;font-size: 1.1rem;font-weight: bold;cursor: pointer;transition: background-color 0.3s, transform 0.2s;"
+    >
+    Click me
+    </button>
+    <p id = 'date'></p>
+
+    <textarea rows = '5' cols = '45' autocapitalize = "on"></textarea>
+
+    <!-- Three check boxes buttons with valid Label, Names and values-->
+    <select size="2">
+        <option value="item1">Item 1</option>
+        <option value="item2">Item 2</option>
+        <option value="item3">Item 3</option>
+        <option value="item4">Item 4</option>
+      </select>
+      
+    <script>
+        document.getElementById('date-btn').addEventListener('click', () =>{
+            const date = new Date;
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+
+            document.getElementById('date').textContent = `${day}/${month}/${year}`
+        }) 
+    </script>
+</body>
+</html>
