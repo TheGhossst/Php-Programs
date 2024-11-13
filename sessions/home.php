@@ -32,7 +32,7 @@ echo "<h1 style='
     if (isset($_POST["logout"])){
         session_destroy();
 
-        header("Location: index.php?message=logout");
+        header("Location: index.php");
         exit();
     }
 ?>

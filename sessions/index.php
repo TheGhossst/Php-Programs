@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); 
 
 if (!isset($_SESSION['page_access_count'])) {
     $_SESSION['page_access_count'] = 0;
